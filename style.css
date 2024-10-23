@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  background-color: #000;
+  color: #000; /* Set all text to black */
+  font-family: Poppins;
+  font-size: 16px; /* Increase base font size */
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  left: 5%;
+  width: 1140px;
+  max-width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  justify-content: flex-start; /* Align items to the left */
+}
+
+header a {
+  color: #000000;
+  margin-right: 40px;
+  /* Optional: Add padding to anchor tags for better touch area */
+  padding: 10px 0; /* Vertical padding for better click area */
+}
+
+/* carousel */
+.carousel {
+  height: 100vh;
+  margin-top: -50px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel .list .item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
+.carousel .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel .list .item .content {
+  position: absolute;
+  top: 50%; /* Center from the top */
+  left: 5%; /* Align to the left */
+  transform: translateY(
+    -50%
+  ); /* Shift up by half its height to center vertically */
+  width: 90%; /* Ensure content takes up less space */
+  color: #000; /* Set text to black */
+}
+
+.carousel .list .item .author {
+  font-weight: bold;
+  font-size: 1.8em; /* Decrease font size */
+  letter-spacing: 2px; /* Reduce letter spacing */
+}
+
+.carousel .list .item .title {
+  font-size: 3em; /* Decrease title size */
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+.carousel .list .item .topic {
+  font-size: 2.5em; /* Decrease topic size */
+  color: #646464;
+  font-weight: bold; /* Make text bold */
+}
+
+.carousel .list .item .des {
+  margin-top: 10px;
+  font-size: 1em; /* Maintain description size */
+  max-width: 30%; /* Set maximum width to 30% */
+  text-align: left; /* Align text to the left */
+}
+
+.carousel .list .item .buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 150px); /* Adjust button size */
+  grid-template-rows: 50px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.carousel .list .item .buttons button {
+  border: none;
+  background-color: #000; /* Button background black */
+  color: #fff; /* Button text white */
+  letter-spacing: 2px; /* Reduce letter spacing */
+  font-family: Poppins;
+  font-weight: 500;
+  padding: 10px 20px;
+  font-size: 1em; /* Adjust button text size */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.carousel .list .item .buttons button:hover {
+  background-color: #000000; /* Change background on hover */
+  color: #febd02; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+.carousel .list .item .buttons button:nth-child(2) {
+  background-color: transparent;
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+.carousel .list .item .buttons button:nth-child(2):hover {
+  background-color: transparent; /* Change background on hover */
+  color: #000; /* Change text color on hover */
+}
+
+@media screen and (max-width: 678px) {
+  .carousel .list .item .content {
+    padding-right: 0;
+  }
+  .carousel .list .item .content .title {
+    font-size: 30px; /* Keep smaller for mobile */
+  }
+}

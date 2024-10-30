@@ -1,0 +1,470 @@
+/* General body styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #febd02;
+  color: #000;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Header styles */
+header {
+  background-color: #000000;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  left: 0;
+  z-index: 1000; /* Makes sure it stays above other elements */
+  height: 60px;
+  color: #febd02;
+}
+
+.name {
+  color: #ffffff;
+}
+
+/* Navigation links */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: #febd02;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #febd02; /* Yellow bars */
+  margin: 4px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Hide nav links by default on small screens */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+  }
+
+  /* Show the nav links when the "show" class is added */
+  nav ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on smaller screens */
+  }
+
+  body {
+    padding-top: 60px; /* Account for header height */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 55px; /* Adjust header height */
+    font-size: 0.7rem; /* Increase font size for header title */
+  }
+
+  body {
+    padding-top: 55px; /* Match the new header height */
+  }
+
+  nav ul {
+    top: 55px; /* Adjust for new header height */
+  }
+
+  nav a {
+    padding: 15px 20px; /* Increase padding for larger touch target */
+    font-size: 0.9rem; /* Make the navigation links larger */
+  }
+
+  .hamburger div {
+    width: 30px; /* Increase hamburger size */
+    height: 3px;
+    margin: 3px 0;
+  }
+}
+
+/*-------------------------------------------------
+---------------------------------------------------
+-------------------------------------------------*/
+
+/* Movie Cards Container */
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Individual Movie Card */
+.movie-card {
+  background-color: #ffffff; /* White background for cards */
+  border: 4px solid #000000; /* Light gray border */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  margin: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  overflow: hidden;
+}
+
+.movie-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.movie-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.movie-details {
+  padding: 15px;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.movie-details h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.movie-details p {
+  margin: 6px 0;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.movie-details p strong {
+  color: #333;
+}
+
+/* Rent button */
+.rent-btn {
+  margin: auto;
+  width: 100%;
+  border: none;
+  background-color: #000; /* Button background black */
+  color: #fff; /* Button text white */
+  letter-spacing: 2px; /* Reduce letter spacing */
+  font-family: "Poppins", sans-serif; /* Set font family */
+  font-weight: 500; /* Set font weight */
+  padding: 10px 20px; /* Padding for button */
+  font-size: 1em; /* Adjust button text size */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
+  border-radius: 0; /* Set border-radius to 0 */
+}
+
+.rent-btn:hover {
+  background-color: #000000; /* Change background on hover */
+  color: #febd02; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Search Form Styles */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  gap: 10px; /* Adds space between input fields and button */
+  padding: 20px;
+  background-color: #000000; /* Background color */
+  border: 2px solid #febd02; /* Border color */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="password"],
+form select {
+  padding: 10px 15px;
+  width: 200px; /* Adjusts input width */
+  font-size: 1rem;
+  border: 1px solid #febd02; /* Border color */
+  border-radius: 0; /* Set border-radius to 0 */
+  background-color: #333333; /* Darker background for input */
+  color: #d5d5d5; /* Text color */
+  transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form select:focus {
+  outline: none;
+  border-color: #febd02; /* Border color on focus */
+  background-color: #ffffff; /* Background color on focus */
+  color: #000000; /* Text color on focus */
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #febd02; /* Button background color */
+  color: #000000; /* Button text color */
+  border: none;
+  border-radius: 0; /* Set border-radius to 0 */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+  background-color: #e6b800; /* Darker button on hover */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Adds hover shadow */
+}
+
+form button:active {
+  background-color: #cc9b00; /* Even darker button on active */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    gap: 15px; /* Adds more space between inputs in mobile view */
+  }
+
+  form input[type="text"],
+  form select,
+  form button {
+    width: 100%; /* Inputs take full width on smaller screens */
+  }
+}
+
+/*-------------------------------------------------
+---------------------------------------------------
+-------------------------------------------------*/
+
+/* Footer styles */
+footer {
+  background-color: rgb(0, 0, 0);
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #000000;
+  display: flex;
+  bottom: 0; /* Aligns it to the bottom */
+  left: 0;
+  z-index: 1000; /* Makes sure it stays above other elements */
+}
+
+footer p {
+  margin: 0 30px 0px 10px;
+  font-size: 0.8rem;
+  color: #febd02;
+  text-align: center;
+}
+
+/*-------------------------------------------------
+---------------------------------------------------
+-------------------------------------------------*/
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 1rem;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+/* Popup styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  justify-content: center; /* Center the popup */
+  align-items: center; /* Center the popup */
+}
+
+.popup-content {
+  background-color: #febd02; /* White background */
+  border: 4px solid #000000;
+  padding: 20px; /* Some padding */
+  text-align: center; /* Centered text */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  max-width: 400px; /* Maximum width */
+  width: 80%; /* Responsive width */
+  font-weight: bold;
+}
+
+.popup-content button {
+  margin: auto;
+  width: 50%;
+  border: none;
+  background-color: #000; /* Button background black */
+  color: #fff; /* Button text white */
+  letter-spacing: 2px; /* Reduce letter spacing */
+  font-family: "Poppins", sans-serif; /* Set font family */
+  font-weight: 500; /* Set font weight */
+  padding: 10px 20px; /* Padding for button */
+  font-size: 1em; /* Adjust button text size */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
+  border-radius: 0; /* Set border-radius to 0 */
+}
+
+.popup-content button:hover {
+  background-color: #000000; /* Change background on hover */
+  color: #febd02; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/*-------------------------------------------------
+---------------------------------------------------
+-------------------------------------------------*/
+
+.topic {
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+}
+
+/*-------------------------------------------------
+---------------------------------------------------
+-------------------------------------------------*/
+
+/* Table Styles */
+table {
+  width: 80%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+}
+
+table th {
+  background-color: #000000;
+  color: #febd02;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-bottom: 3px solid #febd02;
+}
+
+table td {
+  border-bottom: 1px solid #000000;
+}
+
+table tr:hover {
+  background-color: #f4f4f4;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/*-------------------------------------------------
+---------------------------------------------------
+-------------------------------------------------*/
+
+.user-manage-forms {
+  display: flex;
+  flex-direction: row; /* Arrange forms side by side */
+  justify-content: center; /* Center the forms */
+  gap: 10px; /* Space between forms */
+  margin: 50px 200px;
+}
+
+/* Container for both forms */
+.form-container {
+  width: 90%;
+  max-width: 600px; /* Limit form width to a reasonable size */
+  padding: 30px;
+  background-color: #f4f4f4;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 4px solid #000000;
+  align-items: flex-start;
+}
+
+/* Form groups and labels */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1em;
+  color: #555;
+}
+
+.form-fieldset {
+  border: none;
+  padding: 0;
+}
+
+/* Input fields styling */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1024px) {
+  .user-manage-forms {
+    flex-direction: column; /* Stack forms vertically */
+    margin: 30px 50px; /* Adjust margins for smaller screens */
+  }
+
+  .form-container {
+    max-width: 100%; /* Ensure form takes full width */
+  }
+}

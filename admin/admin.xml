@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<admin>
+	<user>
+		<username>
+			admin
+		</username>
+		<password>
+			$2y$10$rgqBEr19u6hPoxEgmhkPXenvlEO0wktWdhp8gAwtNMuZO.xB0w.u2
+		</password>
+		<!-- Hash of 'admin' -->
+	</user>
+</admin>
